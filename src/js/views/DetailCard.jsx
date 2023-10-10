@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router-dom";
 
 const DetailCard = () => {
-    const { id } = useParams();
+    const { id, nature } = useParams();
     const { store, actions } = useContext(Context);
     const params = useParams();
 
@@ -25,7 +25,7 @@ const DetailCard = () => {
                 <div className="row top text-center">
                     <div className="card-image col-6">
                         <img
-                            src={`https://starwars-visualguide.com/assets/img/characters/${detail?.uid}.jpg`}
+                            src={`https://starwars-visualguide.com/assets/img/${nature}/${detail?.uid}.jpg`}
                             alt={detail?.properties?.name}
                             className="card-img-top"
 

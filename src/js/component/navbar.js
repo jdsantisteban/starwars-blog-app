@@ -21,11 +21,10 @@ export const Navbar = () => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Favorites
-              {/* Favorites {store.favorites.length} */}
+              Favorites {store.favorites.length}
             </button>
             <ul className="dropdown-menu dropdown-menu-end">
-              {/* {store.favorites.map((item) => {
+              {store.favorites.map((item) => {
                 return (
                   <li key={item._id}>
                     <a className="dropdown-item" href="#">
@@ -33,7 +32,7 @@ export const Navbar = () => {
                     </a>
                   </li>
                 );
-              })} */}
+              })}
             </ul>
           </div>
         </div>

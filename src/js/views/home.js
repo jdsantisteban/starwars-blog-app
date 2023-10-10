@@ -37,7 +37,7 @@ export const Home = () => {
                 </p>
               </div>
               <div className="card-buttons d-flex justify-content-around mb-2">
-                <Link to={`/person/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
+                <Link to={`/characters/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
                 <span>
                   <i className="far fa-heart text-warning border border-warning fs-4 p-2"></i>
                 </span>
