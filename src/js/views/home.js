@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom"
 
 // styles
 import "../../styles/home.css";
@@ -36,9 +37,7 @@ export const Home = () => {
                 </p>
               </div>
               <div className="card-buttons d-flex justify-content-around mb-2">
-                <button type="button" className="btn btn-outline-primary">
-                  Learn more!
-                </button>
+                <Link to={`/person/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
                 <span>
                   <i className="far fa-heart text-warning border border-warning fs-4 p-2"></i>
                 </span>
@@ -72,9 +71,7 @@ export const Home = () => {
                 </p>
               </div>
               <div className="card-buttons d-flex justify-content-around mb-2">
-                <button type="button" className="btn btn-outline-primary">
-                  Learn more!
-                </button>
+              <Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
                 <span>
                   <i className="far fa-heart text-warning border border-warning fs-4 p-2"></i>
                 </span>
