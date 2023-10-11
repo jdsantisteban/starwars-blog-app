@@ -43,9 +43,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error)
 				}
-			  }
+			  },
+
+			  addFavorite: (favToSave) => {
+				let store = getStore()
+		
+				let exists = store.favorites.some((item) => item._id == favToSave._id)
+				
+				if (exists) {
+				  let newList = store.favorites.filter((item) => item._id != favToSave._id)
+		
+				  setStore({
+					favorites: newList
+				  })
+		
+				} else {
+				  setStore({
+					favorites: [...store.favorites, favToSave]
+				  })
+				}
+			},
+
+			deleteFavorite: (favToDelete) => {
+				let store = getStore()
+
+				let newList = store.favorites.filter((item) => item._id != favToDelete._id)
+				console.log(newList)
+				setStore({
+					favorites: newList
+				})
 			},
 		}
+	}
 	};
 
 export default getState;

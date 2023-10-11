@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import "../../styles/home.css";
 
 export const Home = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 
   return (
 	<>
@@ -38,9 +38,9 @@ export const Home = () => {
               </div>
               <div className="card-buttons d-flex justify-content-around mb-2">
                 <Link to={`/characters/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
-                <span>
-                  <i className="far fa-heart text-warning border border-warning fs-4 p-2"></i>
-                </span>
+                <button onClick={() => actions.addFavorite(item)} className="btn btn-outline-warning">
+                  <i className="far fa-heart" />
+                </button>
               </div>
             </div>
           );
@@ -72,12 +72,12 @@ export const Home = () => {
               </div>
               <div className="card-buttons d-flex justify-content-around mb-2">
               <Link to={`/planets/${item._id}`} className="btn btn-outline-primary">Learn more!</Link>
-                <span>
-                  <i className="far fa-heart text-warning border border-warning fs-4 p-2"></i>
-                </span>
+                <button onClick={() => actions.addFavorite(item)} className="btn btn-outline-warning">
+                  <i className="far fa-heart" />
+                </button>
               </div>
             </div>
-          );
+          ); 
         })}
       </div>
     </div>

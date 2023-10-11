@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logosw from "../../img/logosw.jpg";
 
 export const Navbar = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-light bg-light mb-3">
       <div className="container">
@@ -23,13 +23,14 @@ export const Navbar = () => {
             >
               Favorites {store.favorites.length}
             </button>
-            <ul className="dropdown-menu dropdown-menu-end">
+            <ul className="dropdown-menu dropdown-menu-end" style={{minWidth:"200px"}}>
               {store.favorites.map((item) => {
                 return (
-                  <li key={item._id}>
-                    <a className="dropdown-item" href="#">
+                  <li key={item._id} className="d-flex justify-content-between">
+                    <span className="px-2">
                       {item.properties.name}
-                    </a>
+                    </span> 
+                    <i className="fas fa-trash px-2" onClick={() => actions.deleteFavorite(item)}></i>
                   </li>
                 );
               })}
