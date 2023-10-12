@@ -37,14 +37,26 @@ const DetailCard = () => {
                     </div>
                 </div>
                 <hr className="text-danger mt-2" />
-                <div className="bottom text-danger text-center d-flex justify-content-around">
-                    <div>Name<br /> {detail?.properties?.name}</div>
-                    <div>Birth Year<br /> {detail?.properties?.birth_year}</div>
-                    <div>Gender<br /> {detail?.properties?.gender}</div>
-                    <div>Heihgt<br /> {detail?.properties?.height}</div>
-                    <div>Skin Color<br /> {detail?.properties?.skin_color}</div>
-                    <div>Eye Color<br /> {detail?.properties?.eye_color}</div>
-                </div>
+                {nature == "characters" ?
+                    <div className="bottom text-danger text-center d-flex justify-content-around">
+                        <div className="d-flex align-items-center">Name<br /> {detail?.properties?.name}</div>
+                        <div className="d-flex align-items-center">Birth Year<br /> {detail?.properties?.birth_year}</div>
+                        <div className="d-flex align-items-center">Gender<br /> {detail?.properties?.gender}</div>
+                        <div className="d-flex align-items-center">Heihgt<br /> {detail?.properties?.height}</div>
+                        <div className="d-flex align-items-center">Skin Color<br /> {detail?.properties?.skin_color}</div>
+                        <div className="d-flex align-items-center">Eye Color<br /> {detail?.properties?.eye_color}</div>
+                    </div>
+                    :
+                    <div className="bottom text-danger text-center d-flex justify-content-around">
+                        <div className="d-flex align-items-center">Name<br /> {detail?.properties?.name}</div>
+                        <div className="d-flex align-items-center">Climate<br /> {detail?.properties?.climate}</div>
+                        <div className="d-flex align-items-center">Population<br /> {detail?.properties?.population}</div>
+                        <div className="d-flex align-items-center">Orbital Period<br /> {detail?.properties?.orbital_period}</div>
+                        <div className="d-flex align-items-center">Rotation Period<br /> {detail?.properties?.rotation_period}</div>
+                        <div className="d-flex align-items-center">Diameter<br /> {detail?.properties?.diameter}</div>
+                    </div>}
+
+
             </div>
         </div>
     );
